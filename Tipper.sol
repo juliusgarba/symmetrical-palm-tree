@@ -132,7 +132,7 @@ contract Tipper {
             "Can't cashout purse because you are not the owner"
         );
         require(
-            purses[_purse_id].lastCashout + cashoutInterval <= block.timestamp,
+            purses[_purse_id].lastCashout + cashoutInterval => block.timestamp,
             "Not yet time for cashout"
         );
         Purse storage purse = purses[_purse_id];
